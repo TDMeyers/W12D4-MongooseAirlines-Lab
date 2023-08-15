@@ -38,11 +38,14 @@ module.exports.show=async(req,res)=>{
 module.exports.update=async (req,res)=>{
       try{
 
-       let flights= await Flight.findByIdAndUpdate(req.params.id,req.body)
-        flights.destination.push(req.body.arrival,req.body.airport)
+       let flights= await Flight.findById(req.params.id)
+        flights.destination.push(req.body)
         flights.save()
-        console.log(flights)
+        res.redirect(`/flights/${req.params.id}`)
+      
     }catch(err){
         console.log(err)
+        res.redirect(`/flights/${req.params.id}`)
+      
       }
 }

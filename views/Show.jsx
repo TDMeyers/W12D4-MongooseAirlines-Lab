@@ -10,7 +10,7 @@ export default function Show({ flight }) {
         <p>Flight No:{flightNo}</p>
         <p>Departure: {departs.toLocaleDateString()}</p>
          <h1>Destination:</h1>
-         <form action={`/flight/${_id}?_method=PUT`} method='POST'>
+         <form action={`/flights/${_id}?_method=PUT`} method='POST'>
 <label htmlFor="airport">Departure Airport:</label><br />
             <select id="airport" name="airport">
             <option value="AUS">AUS</option>
@@ -21,7 +21,7 @@ export default function Show({ flight }) {
             </select><br /><br />
 
 <label htmlFor='arrival'>Arrival:</label>
-<input type='date' id='arrival' name='arrival'></input><br /><br /><br />
+<input type='datetime-local' id='arrival' name='arrival'></input><br /><br /><br />
    
     <button>Update</button>
    
