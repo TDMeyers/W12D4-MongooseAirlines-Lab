@@ -1,5 +1,6 @@
 const Flight=require("../models/Flight")
 
+
 module.exports.index=async(req,res)=>{
     let flights;
     try{
@@ -33,4 +34,15 @@ module.exports.show=async(req,res)=>{
     } else {
         res.redirect('/flights')
     }
+}
+module.exports.update=async (req,res)=>{
+      try{
+
+       let flights= await Flight.findByIdAndUpdate(req.params.id,req.body)
+        flights.destination.push(req.body.arrival,req.body.airport)
+        flights.save()
+        console.log(flights)
+    }catch(err){
+        console.log(err)
+      }
 }

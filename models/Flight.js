@@ -44,8 +44,5 @@ const flightSchema = new Schema({
 })
 
 
-
-
-
 const Flight = mongoose.model("flights", flightSchema);
 module.exports= Flight
