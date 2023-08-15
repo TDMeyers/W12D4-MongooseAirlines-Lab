@@ -9,3 +9,15 @@ module.exports.index=async(req,res)=>{
     }
     res.render("Index",{flights})
 }
+module.exports.create=async(req,res)=>{
+    
+    try{
+     let flight=await Flight.create(req.body)
+    }catch(err){
+ console.log(err)
+    }
+    res.redirect("/")
+}
+module.exports.New = (req, res) => {
+    res.render('New')
+}
