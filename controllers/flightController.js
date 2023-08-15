@@ -40,7 +40,7 @@ module.exports.update=async (req,res)=>{
 
        let flights= await Flight.findById(req.params.id)
         flights.destination.push(req.body)
-        flights.save()
+           await flights.save()
         res.redirect(`/flights/${req.params.id}`)
       
     }catch(err){
