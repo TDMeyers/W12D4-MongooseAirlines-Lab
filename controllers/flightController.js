@@ -21,3 +21,16 @@ module.exports.create=async(req,res)=>{
 module.exports.New = (req, res) => {
     res.render('New')
 }
+module.exports.show=async(req,res)=>{
+    let flight;
+    try{
+        flight=await Flight.findById(req.params.id)
+    }catch(err){
+        console.log(err)
+    }
+    if (flight) {
+        res.render('Show', { flight })
+    } else {
+        res.redirect('/flights')
+    }
+}

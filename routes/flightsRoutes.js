@@ -5,4 +5,5 @@ const flightController=require("../controllers/flightController")
 router.get("/",flightController.index)
 router.post("/",flightController.create)
 router.get("/New",flightController.New)
+router.get("/:id",flightController.show)
 module.exports=router

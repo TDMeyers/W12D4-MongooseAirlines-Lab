@@ -1,13 +1,13 @@
-export default function Show({ SingleFlightData }) {
-    let { airline, flightNo, departs, _id } = SingleFlightData
-  
+import React from "react"
+export default function Show({ flight }) {
+    let { airline,flightNo, departs, _id } =flight
+  console.log(flight)
   
     return (
       <div>
         <h1>Show Flight Details</h1>
         <p> Airline:{airline}</p>
         <p>Flight No:{flightNo}</p>
-        {/* <p>Departure:{departs}</p> */}
         <p>Departure: {departs.toLocaleDateString()}</p>
   
         <form action={`/flights/${_id}?_method=DELETE`} method='post'>
@@ -20,7 +20,7 @@ export default function Show({ SingleFlightData }) {
         <a href='/flights'>Back</a>
   
   
-  
+    
   
   
       </div>
