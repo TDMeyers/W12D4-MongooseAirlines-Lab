@@ -9,8 +9,9 @@ export default function Index(props) {
          <p>{flight.airline}</p>
          <p>{flight.flightNo}</p>
          <p>{flight.departs}</p>
+         <a href={`/flights/${flight._id}`}><button>Flight Details</button></a>
     </div>
-       
+       console.log(flight)
       })}
     </div>
   )
