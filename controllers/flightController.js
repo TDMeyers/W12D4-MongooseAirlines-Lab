@@ -13,7 +13,7 @@ module.exports.index=async(req,res)=>{
 module.exports.create=async(req,res)=>{
     
     try{
-     let flight=await Flight.create(req.body)
+      flight=await Flight.create(req.body)
     }catch(err){
  console.log(err)
     }

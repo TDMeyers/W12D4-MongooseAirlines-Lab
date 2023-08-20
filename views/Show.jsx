@@ -1,9 +1,12 @@
 import React from "react"
+import DefaultLayout from "./layout/DefaultLayout"
+
 export default function Show({ flight }) {
     let { airline,flightNo, departs, _id,destination} =flight
   console.log(flight)
   console.log(destination)
     return (
+      <DefaultLayout>
       <div>
         <h1>Show Flight Details</h1>
         <p> Airline:{airline}</p>
@@ -46,5 +49,6 @@ export default function Show({ flight }) {
   
   
       </div>
+      </DefaultLayout>
     )
   }

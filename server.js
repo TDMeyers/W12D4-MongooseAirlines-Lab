@@ -4,7 +4,7 @@ const app=express()
 require('dotenv').config()
 const mongoConfig = require('./config')
 mongoConfig()
-const PORT=8000
+const PORT=8080
 const jsxEngine = require('jsx-view-engine')
 const flightsRoutes=require("./routes/flightsRoutes")
 const methodOverride = require('method-override')
@@ -15,9 +15,10 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use("/flights",flightsRoutes)
 app.get('/',(req,res)=>{
-    res.send("hello")
+    res.redirect("/flights")
 })
-
+//styling
+app.use(express.static("public"));
 
 
 
